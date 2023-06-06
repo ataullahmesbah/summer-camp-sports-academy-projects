@@ -1,13 +1,78 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../Shared/Container";
 import googleLogo from '../Images/SignLogo/google-signIn.png'
 import logo from '../Images/Education/learning.png'
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignUp = () => {
+
+    const { createUser, userProfileUpdate, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/'
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
+
+        // profile image
+        const image = event.target.image.files[0];
+        const formData = new FormData();
+        formData.append('image', image);
+
+        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                const imageUrl = imageData.data.display_url;
+
+
+
+
+
+
+                createUser(data.email, data.password, data.confirm)
+                    .then(result => {
+                        const loggedUser = result.user;
+                        console.log(loggedUser);
+                        userProfileUpdate(data.name, imageUrl)
+                            .then(() => {
+
+                                navigate(from, { replace: true });
+                            })
+                            .catch(err => {
+
+                                console.log(err.message);
+
+                            });
+                    })
+                    .catch(err => {
+
+                        console.log(err.message);
+
+                    });
+            })
+            .catch(err => {
+
+                console.log(err.message);
+
+            });
+    };
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
 
     return (
@@ -24,7 +89,7 @@ const SignUp = () => {
                     </div>
 
                     {/* Google Sign up field */}
-                    <div className=" mt-4 flex hover:bg-purple-100 text-sm border text-center justify-center p-1">
+                    <div onClick={handleGoogleSignIn} className=" mt-4 flex hover:bg-purple-100 text-sm border text-center justify-center p-1">
                         <div className="">
                             <img className="w-10 h-10 mx-5 text-center items-center" src={googleLogo} alt="" />
                         </div>
@@ -69,7 +134,7 @@ const SignUp = () => {
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
                                 id="photo"
                                 type="file"
-                                name='photo'
+                                name='image'
                                 accept="image/*"
                             />
                         </div>
@@ -109,14 +174,14 @@ const SignUp = () => {
                             placeholder="Enter your password"
                         />
                         {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
-                            {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one lower case, one upper case, one number and one special characters is required</p>}
-                            {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
-                            {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
+                        {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one lower case, one upper case, one number and one special characters is required</p>}
+                        {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
+                        {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                     </div>
 
                     {/* Confirmed password input field */}
 
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                             Confirm Password
                         </label>
@@ -129,7 +194,7 @@ const SignUp = () => {
                             placeholder="Enter your confirm password"
                         />
                         {errors.confirm && <span className="text-red-600">Confirmed password required</span>}
-                    </div>
+                    </div> */}
 
                     {/* Sign Up input value */}
                     <div className="text-center mb-4 ">

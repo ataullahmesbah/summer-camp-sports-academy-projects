@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../Shared/Container";
 import googleLogo from '../Images/SignLogo/google-signIn.png'
 import logo from '../Images/Education/learning.png'
@@ -8,18 +8,37 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const LogIn = () => {
-    const {signIn} = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
+
 
     const handleLogIn = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-       
+
         signIn(email, password)
-        .then(result => {
-            const user = result.user;
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+    }
+
+    // google sign in
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
 
     return (
@@ -37,7 +56,7 @@ const LogIn = () => {
                     </div>
 
                     {/* Google Sign In */}
-                    <div className=" mt-4 flex hover:bg-purple-100 text-sm border text-center justify-center p-1">
+                    <div onClick={handleGoogleSignIn} className=" mt-4 flex hover:bg-purple-100 text-sm border text-center justify-center p-1">
                         <div className="">
                             <img className="w-10 h-10 mx-5 text-center items-center" src={googleLogo} alt="" />
                         </div>
