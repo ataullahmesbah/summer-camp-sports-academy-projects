@@ -19,30 +19,30 @@ const ProfileDropDown = () => {
 
 
 
-                <div
-                    onClick={() => setIsMenu(!isMenu)}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className='text-2xl p-4 md:py-1 md:px-2 shadow-lg flex flex-row items-center rounded-3xl cursor-pointer hover:shadow-md transition gap-4'
-                >
-                    <AiOutlineMenuUnfold />
-                    <div className="md:block hidden">
-                        {user && user.photoURL ? (
-                            <>
-                                <div className="relative">
-                                    <img src={user.photoURL} alt="Profile" className="w-6 h-6 rounded-full" />
-                                    {isHovered && (
-                                        <span className="absolute top-0 left-full ml-2 text-white bg-gray-800 p-1 rounded text-sm  whitespace-nowrap overflow-hidden">
-                                            {user.displayName}
-                                        </span>
-                                    )}
-                                </div>
-                            </>
-                        ) : (
-                            <FaUserCheck />
-                        )}
-                    </div>
-                </div>
+            <div
+    onClick={() => setIsMenu(!isMenu)}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+    className="text-2xl p-4 md:py-1 md:px-2 shadow-lg flex flex-row items-center rounded-3xl cursor-pointer hover:shadow-md transition gap-4"
+  >
+    <AiOutlineMenuUnfold />
+    <div>
+      {user && user.photoURL ? (
+        <>
+          <div className="relative">
+            <img src={user.photoURL} alt="Profile" className="w-9 h-9 rounded-full" />
+            {isHovered && (
+              <span className="absolute top-0 left-full ml-2 text-white bg-gray-800 p-1 rounded text-sm whitespace-nowrap overflow-hidden">
+                {user.displayName}
+              </span>
+            )}
+          </div>
+        </>
+      ) : (
+        <FaUserCheck />
+      )}
+    </div>
+  </div>
 
 
 
