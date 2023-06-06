@@ -16,7 +16,7 @@ const ProfileDropDown = () => {
 
 
 
-            <div onClick={() => setIsMenu(!isMenu)} className=' text-2xl p-4 md:py-1 md:px-2 border-[2px] border-neutral-400 flex flex-row items-center rounded-3xl cursor-pointer hover:shadow-md transition gap-4'>
+            <div onClick={() => setIsMenu(!isMenu)} className=' text-2xl p-4 md:py-1 md:px-2 shadow-lg  flex flex-row items-center rounded-3xl cursor-pointer hover:shadow-md transition gap-4'>
                 <AiOutlineMenuUnfold />
                 <div className="md:block hidden">
                     <FaUserCheck />
