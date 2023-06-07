@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "../Container";
 import ProfileDropDown from "../ProfileDropDown/ProfileDropDown";
+import elitearena from '../../Images/Education/Elite Athlete Arena Logo ..png'
 
 
 const Navbar = () => {
@@ -13,13 +14,14 @@ const Navbar = () => {
 
 
                     <Link to='/' className="font-semibold hidden md:block">
-                        F-Project
+                        <img className="w-48" src={elitearena} alt="" />
                     </Link>
-                    <div className="space-x-4 font-semibold">
-                       <Link to='/about'>About</Link>
-                       <Link to='/blog'>Blog</Link>
+                    <div className="space-x-4 font-semibold hidden md:block">
+                       <Link to='/'>Home</Link>
+                       <Link to='/instructors'>Instructors</Link>
+                       <Link to='/classes'> Classes</Link>
                        <Link>Dashboard</Link>
-                       <Link>Menu</Link>
+                      
                     </div>
                     <div className="">
                         <ProfileDropDown/>
