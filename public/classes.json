@@ -1,0 +1,203 @@
+[
+    {
+      "name": "Forehand Stroke Mastery",
+      "image": "https://example.com/forehand.jpg",
+      "instructor name": "Sophie Clark",
+      "category": "Tennis",
+      "available seat": 20,
+      "price": 400
+    },
+    {
+      "name": "Backhand Technique Workshop",
+      "image": "https://example.com/backhand.jpg",
+      "instructor name": "David Thompson",
+      "category": "Tennis",
+      "available seat": 15,
+      "price": 350
+    },
+    {
+      "name": "Serve Power Training",
+      "image": "https://example.com/serve.jpg",
+      "instructor name": "Emily Johnson",
+      "category": "Tennis",
+      "available seat": 25,
+      "price": 500
+    },
+    {
+      "name": "Tennis Footwork Drills",
+      "image": "https://example.com/footwork.jpg",
+      "instructor name": "James Turner",
+      "category": "Tennis",
+      "available seat": 30,
+      "price": 450
+    },
+    {
+      "name": "Tennis Tactics Seminar",
+      "image": "https://example.com/tactics.jpg",
+      "instructor name": "Olivia Roberts",
+      "category": "Tennis",
+      "available seat": 35,
+      "price": 550
+    },
+    {
+        "name": "Goalkeeping Training",
+        "image": "https://example.com/goalkeeping.jpg",
+        "instructor name": "John Lee",
+        "category": "Football",
+        "available seat": 87,
+        "price": 905
+      },
+      {
+        "name": "Dribbling Masterclass",
+        "image": "https://example.com/dribbling.jpg",
+        "instructor name": "Sarah Johnson",
+        "category": "Football",
+        "available seat": 62,
+        "price": 750
+      },
+      {
+        "name": "Striker's Finishing Workshop",
+        "image": "https://example.com/finishing.jpg",
+        "instructor name": "David Martinez",
+        "category": "Football",
+        "available seat": 50,
+        "price": 650
+      },
+      {
+        "name": "Defensive Tactics Seminar",
+        "image": "https://example.com/defense.jpg",
+        "instructor name": "Michael Turner",
+        "category": "Football",
+        "available seat": 100,
+        "price": 500
+      },
+      {
+        "name": "Midfield Playmaking Clinic",
+        "image": "https://example.com/midfield.jpg",
+        "instructor name": "Emma Roberts",
+        "category": "Football",
+        "available seat": 75,
+        "price": 800
+      },
+      {
+        "name": "Batting Techniques Workshop",
+        "image": "https://example.com/batting.jpg",
+        "instructor name": "Andrew Smith",
+        "category": "Cricket",
+        "available seat": 40,
+        "price": 500
+      },
+      {
+        "name": "Bowling Masterclass",
+        "image": "https://example.com/bowling.jpg",
+        "instructor name": "Lisa Anderson",
+        "category": "Cricket",
+        "available seat": 35,
+        "price": 600
+      },
+      {
+        "name": "Fielding Skills Training",
+        "image": "https://example.com/fielding.jpg",
+        "instructor name": "James Wilson",
+        "category": "Cricket",
+        "available seat": 60,
+        "price": 450
+      },
+      {
+        "name": "Cricket Strategy Workshop",
+        "image": "https://example.com/strategy.jpg",
+        "instructor name": "Sophia Davis",
+        "category": "Cricket",
+        "available seat": 25,
+        "price": 700
+      },
+      {
+        "name": "Wicketkeeping Clinic",
+        "image": "https://example.com/wicketkeeping.jpg",
+        "instructor name": "Oliver Taylor",
+        "category": "Cricket",
+        "available seat": 30,
+        "price": 550
+      },
+      {
+        "name": "Shooting Skills Training",
+        "image": "https://example.com/shooting.jpg",
+        "instructor name": "Jason Thompson",
+        "category": "Basketball",
+        "available seat": 30,
+        "price": 600
+      },
+      {
+        "name": "Dribbling Techniques Workshop",
+        "image": "https://example.com/dribbling_basketball.jpg",
+        "instructor name": "Megan Harris",
+        "category": "Basketball",
+        "available seat": 25,
+        "price": 550
+      },
+      {
+        "name": "Defensive Strategies Seminar",
+        "image": "https://example.com/defense_basketball.jpg",
+        "instructor name": "Robert Johnson",
+        "category": "Basketball",
+        "available seat": 35,
+        "price": 700
+      },
+      {
+        "name": "Passing Fundamentals Clinic",
+        "image": "https://example.com/passing_basketball.jpg",
+        "instructor name": "Emily Turner",
+        "category": "Basketball",
+        "available seat": 20,
+        "price": 500
+      },
+      {
+        "name": "Basketball Conditioning Camp",
+        "image": "https://example.com/conditioning_basketball.jpg",
+        "instructor name": "Daniel Martinez",
+        "category": "Basketball",
+        "available seat": 40,
+        "price": 650
+      },
+      {
+        "name": "Rugby Tackling Techniques",
+        "image": "https://example.com/tackling_rugby.jpg",
+        "instructor name": "Samuel Wilson",
+        "category": "Rugby",
+        "available seat": 50,
+        "price": 700
+      },
+      {
+        "name": "Lineout Skills Training",
+        "image": "https://example.com/lineout_rugby.jpg",
+        "instructor name": "Isabella Thompson",
+        "category": "Rugby",
+        "available seat": 30,
+        "price": 550
+      },
+      {
+        "name": "Rugby Scrum Workshop",
+        "image": "https://example.com/scrum_rugby.jpg",
+        "instructor name": "Thomas Johnson",
+        "category": "Rugby",
+        "available seat": 40,
+        "price": 600
+      },
+      {
+        "name": "Rugby Kicking Clinic",
+        "image": "https://example.com/kicking_rugby.jpg",
+        "instructor name": "Ava Davis",
+        "category": "Rugby",
+        "available seat": 25,
+        "price": 500
+      },
+      {
+        "name": "Rugby Strategy Seminar",
+        "image": "https://example.com/strategy_rugby.jpg",
+        "instructor name": "Noah Roberts",
+        "category": "Rugby",
+        "available seat": 35,
+        "price": 650
+      }
+    ]
+  
