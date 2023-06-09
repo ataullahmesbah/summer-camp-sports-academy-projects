@@ -3,7 +3,7 @@
     "name": "Forehand Stroke Mastery",
     "image": "https://example.com/forehand.jpg",
     "instructor_name": "Sophie Clark",
-    "category": "Tennis",
+    "category": "tennis",
     "available_seat": 20,
     "price": 400,
     "enrolled_student": 15
@@ -12,7 +12,7 @@
     "name": "Backhand Technique Workshop",
     "image": "https://example.com/backhand.jpg",
     "instructor_name": "David Thompson",
-    "category": "Tennis",
+    "category": "tennis",
     "available_seat": 15,
     "price": 350,
     "enrolled_student": 10
@@ -21,34 +21,34 @@
     "name": "Serve Power Training",
     "image": "https://example.com/serve.jpg",
     "instructor_name": "Emily Johnson",
-    "category": "Tennis",
+    "category": "tennis",
     "available_seat": 25,
     "price": 500,
     "enrolled_student": 20
   },
   {
-    "name": "Tennis Footwork Drills",
+    "name": "tennis Footwork Drills",
     "image": "https://example.com/footwork.jpg",
     "instructor_name": "James Turner",
-    "category": "Tennis",
+    "category": "tennis",
     "available_seat": 30,
     "price": 450,
     "enrolled_student": 25
   },
   {
-    "name": "Tennis Tactics Seminar",
+    "name": "tennis Tactics Seminar",
     "image": "https://example.com/tactics.jpg",
     "instructor_name": "Olivia Roberts",
-    "category": "Tennis",
+    "category": "tennis",
     "available_seat": 35,
     "price": 550,
     "enrolled_student": 30
   },
   {
     "name": "Goalkeeping Training",
-    "image": "https://example.com/goalkeeping.jpg",
+    "image": "https://th.bing.com/th/id/OIP.VxLEiBVkCvLlXtz3YlVhOQHaEK?pid=ImgDet&rs=1",
     "instructor_name": "John Lee",
-    "category": "Football",
+    "category": "football",
     "available_seat": 87,
     "price": 905,
     "enrolled_student": 70
@@ -57,7 +57,7 @@
     "name": "Dribbling Masterclass",
     "image": "https://example.com/dribbling.jpg",
     "instructor_name": "Sarah Johnson",
-    "category": "Football",
+    "category": "football",
     "available_seat": 62,
     "price": 750,
     "enrolled_student": 45
@@ -66,7 +66,7 @@
     "name": "Striker's Finishing Workshop",
     "image": "https://example.com/finishing.jpg",
     "instructor_name": "David Martinez",
-    "category": "Football",
+    "category": "football",
     "available_seat": 50,
     "price": 650,
     "enrolled_student": 30
@@ -75,7 +75,7 @@
     "name": "Defensive Tactics Seminar",
     "image": "https://example.com/defense.jpg",
     "instructor_name": "Michael Turner",
-    "category": "Football",
+    "category": "football",
     "available_seat": 100,
     "price": 500,
     "enrolled_student": 80
@@ -84,7 +84,7 @@
     "name": "Midfield Playmaking Clinic",
     "image": "https://example.com/midfield.jpg",
     "instructor_name": "Emma Roberts",
-    "category": "Football",
+    "category": "football",
     "available_seat": 75,
     "price": 800,
     "enrolled_student": 60
@@ -93,7 +93,7 @@
     "name": "Batting Techniques Workshop",
     "image": "https://example.com/batting.jpg",
     "instructor_name": "Andrew Smith",
-    "category": "Cricket",
+    "category": "cricket",
     "available_seat": 40,
     "price": 500,
     "enrolled_student": 30
@@ -102,7 +102,7 @@
     "name": "Bowling Masterclass",
     "image": "https://example.com/bowling.jpg",
     "instructor_name": "Lisa Anderson",
-    "category": "Cricket",
+    "category": "cricket",
     "available_seat": 35,
     "price": 600,
     "enrolled_student": 25
@@ -111,7 +111,7 @@
     "name": "Fielding Skills Training",
     "image": "https://example.com/fielding.jpg",
     "instructor_name": "James Wilson",
-    "category": "Cricket",
+    "category": "cricket",
     "available_seat": 60,
     "price": 450,
     "enrolled_student": 40
@@ -120,7 +120,7 @@
     "name": "Cricket Strategy Workshop",
     "image": "https://example.com/strategy.jpg",
     "instructor_name": "Sophia Davis",
-    "category": "Cricket",
+    "category": "cricket",
     "available_seat": 25,
     "price": 700,
     "enrolled_student": 20
@@ -129,7 +129,7 @@
     "name": "Wicketkeeping Clinic",
     "image": "https://example.com/wicketkeeping.jpg",
     "instructor_name": "Oliver Taylor",
-    "category": "Cricket",
+    "category": "cricket",
     "available_seat": 30,
     "price": 550,
     "enrolled_student": 15
@@ -138,7 +138,7 @@
     "name": "Shooting Skills Training",
     "image": "https://example.com/shooting.jpg",
     "instructor_name": "Jason Thompson",
-    "category": "Basketball",
+    "category": "basketball",
     "available_seat": 30,
     "price": 600,
     "enrolled_student": 25
@@ -147,7 +147,7 @@
     "name": "Dribbling Techniques Workshop",
     "image": "https://example.com/dribbling_basketball.jpg",
     "instructor_name": "Megan Harris",
-    "category": "Basketball",
+    "category": "basketball",
     "available_seat": 25,
     "price": 550,
     "enrolled_student": 20
@@ -156,7 +156,7 @@
     "name": "Defensive Strategies Seminar",
     "image": "https://example.com/defense_basketball.jpg",
     "instructor_name": "Robert Johnson",
-    "category": "Basketball",
+    "category": "basketball",
     "available_seat": 35,
     "price": 700,
     "enrolled_student": 30
@@ -165,7 +165,7 @@
     "name": "Passing Fundamentals Clinic",
     "image": "https://example.com/passing_basketball.jpg",
     "instructor_name": "Emily Turner",
-    "category": "Basketball",
+    "category": "basketball",
     "available_seat": 20,
     "price": 500,
     "enrolled_student": 15
@@ -174,7 +174,7 @@
     "name": "Basketball Conditioning Camp",
     "image": "https://example.com/conditioning_basketball.jpg",
     "instructor_name": "Daniel Martinez",
-    "category": "Basketball",
+    "category": "basketball",
     "available_seat": 40,
     "price": 650,
     "enrolled_student": 35
@@ -183,7 +183,7 @@
     "name": "Rugby Tackling Techniques",
     "image": "https://example.com/tackling_rugby.jpg",
     "instructor_name": "Samuel Wilson",
-    "category": "Rugby",
+    "category": "rugby",
     "available_seat": 50,
     "price": 700,
     "enrolled_student": 40
@@ -192,7 +192,7 @@
     "name": "Lineout Skills Training",
     "image": "https://example.com/lineout_rugby.jpg",
     "instructor_name": "Isabella Thompson",
-    "category": "Rugby",
+    "category": "rugby",
     "available_seat": 30,
     "price": 550,
     "enrolled_student": 25
@@ -201,7 +201,7 @@
     "name": "Rugby Scrum Workshop",
     "image": "https://example.com/scrum_rugby.jpg",
     "instructor_name": "Thomas Johnson",
-    "category": "Rugby",
+    "category": "rugby",
     "available_seat": 40,
     "price": 600,
     "enrolled_student": 35
@@ -210,7 +210,7 @@
     "name": "Rugby Kicking Clinic",
     "image": "https://example.com/kicking_rugby.jpg",
     "instructor_name": "Ava Davis",
-    "category": "Rugby",
+    "category": "rugby",
     "available_seat": 25,
     "price": 500,
     "enrolled_student": 20
@@ -219,7 +219,7 @@
     "name": "Rugby Strategy Seminar",
     "image": "https://example.com/strategy_rugby.jpg",
     "instructor_name": "Noah Roberts",
-    "category": "Rugby",
+    "category": "rugby",
     "available_seat": 35,
     "price": 650,
     "enrolled_student": 30
