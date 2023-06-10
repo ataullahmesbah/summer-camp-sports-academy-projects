@@ -5,16 +5,17 @@ import logo from '../Images/Education/learning.png'
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
 
-    const { createUser, userProfileUpdate, googleSignIn } = useContext(AuthContext);
+    const { createUser, userProfileUpdate, googleSignIn, logOut } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/'
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const onSubmit = (data, event) => {
         console.log(data);
 
         // profile image
@@ -42,20 +43,37 @@ const SignUp = () => {
                         console.log(loggedUser);
                         userProfileUpdate(data.name, imageUrl)
                             .then(() => {
-
-                                navigate(from, { replace: true });
+                                const saveUser = { name: data.name, email: data.email }
+                                fetch('http://localhost:5000/users', {
+                                    method: 'POST',
+                                    headers: {
+                                        'content-type': 'application/json'
+                                    },
+                                    body: JSON.stringify(saveUser)
+                                })
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        if (data.insertedId) {
+                                            reset();
+                                            Swal.fire({
+                                                position: 'top-end',
+                                                icon: 'success',
+                                                title: 'User created successfully',
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                            })
+                                            navigate(from, { replace: true });
+                                        }
+                                    })
                             })
                             .catch(err => {
-
                                 console.log(err.message);
-
                             });
                     })
                     .catch(err => {
-
                         console.log(err.message);
-
                     });
+
             })
             .catch(err => {
 

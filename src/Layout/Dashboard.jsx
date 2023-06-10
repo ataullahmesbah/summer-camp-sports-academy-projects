@@ -12,7 +12,7 @@ const Dashboard = () => {
             <div className="drawer-content">
                 {/* Page content here */}
 
-                <label htmlFor="my-drawer" className=" drawer-button "><FaAlignLeft /></label>
+                <label htmlFor="my-drawer" className=" drawer-button "><FaAlignLeft className="text-2xl" /></label>
                 <Outlet></Outlet>
             </div>
 
