@@ -2,8 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../Shared/Container";
 import googleLogo from '../Images/SignLogo/google-signIn.png'
 import logo from '../Images/Education/learning.png'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -40,6 +41,17 @@ const LogIn = () => {
                 console.log(error.message);
             })
     }
+
+    // Password visibility toggle
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const showPassword = () => {
+        setPasswordVisible(true);
+    };
+
+    const hidePassword = () => {
+        setPasswordVisible(false);
+    };
 
     return (
         <Container>
@@ -92,18 +104,33 @@ const LogIn = () => {
 
                     {/* password input field */}
 
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                            Password
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
-                            id="password"
-                            name='password'
-                            type="password"
-                            placeholder="Enter your password"
-                        />
-                    </div>
+                    <div className="mb-4 relative">
+  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+    Password
+  </label>
+  <div className="flex">
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
+      id="password"
+      name="password"
+      type={passwordVisible ? 'text' : 'password'}
+      placeholder="Enter your password"
+      
+    />
+    <div
+      className="cursor-pointer ml-[-15px] self-center "
+      onClick={passwordVisible ? hidePassword : showPassword}
+    >
+      {passwordVisible ? (
+        <FaEyeSlash className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
+      ) : (
+        <FaEye className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
+      )}
+    </div>
+  </div>
+</div>
+
+
 
                     {/* forgot password */}
                     <div className="flex items-center justify-between mb-4">
