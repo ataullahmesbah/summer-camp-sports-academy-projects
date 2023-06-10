@@ -4,26 +4,34 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const AllClasses = ({ allClass }) => {
-    const { image, name, instructor_name, available_seat, price, } = allClass;
+    const { image, name, instructor_name, available_seat, price, _id } = allClass;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation(); 
+    const location = useLocation();
 
     const handleBookingClass = allClass => {
-        if(user){
-            fetch('http://localhost:5000/bookingClass')
-            .then(res => res.json())
-            .then(data => {
-                if(data.insertedId){
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                      })
-                }
+        if (user && user.email) {
+            const bookingClass = { classBooking: _id, name, image, price, instructor_name, available_seat, email: user.email }
+
+            fetch('http://localhost:5000/bookingClass', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(bookingClass)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Congratulations! You have successfully booked your class',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
         }
         else {
             Swal.fire({
