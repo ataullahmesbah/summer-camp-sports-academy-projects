@@ -1,7 +1,7 @@
 [
   {
     "name": "Forehand Stroke Mastery",
-    "image": "https://example.com/forehand.jpg",
+    "image": "https://i.ibb.co/dJ1RKN1/Sk-10-J-swing-with-fig5-080314.png",
     "instructor_name": "Sophie Clark",
     "category": "tennis",
     "available_seat": 20,
@@ -10,7 +10,7 @@
   },
   {
     "name": "Backhand Technique Workshop",
-    "image": "https://example.com/backhand.jpg",
+    "image": "https://i.ibb.co/qpqhC1J/screenshot-2023-05-21-at-10-07-50.png",
     "instructor_name": "David Thompson",
     "category": "tennis",
     "available_seat": 15,
@@ -27,8 +27,8 @@
     "enrolled_student": 20
   },
   {
-    "name": "tennis Footwork Drills",
-    "image": "https://example.com/footwork.jpg",
+    "name": "Tennis Footwork Drills",
+    "image": "https://i.ibb.co/xhjnYBZ/Footwork-Drills-pfgi5vcdfrv90mw7rkzzcska78gyxmvpgr41ug2l34.png",
     "instructor_name": "James Turner",
     "category": "tennis",
     "available_seat": 30,
@@ -36,8 +36,8 @@
     "enrolled_student": 25
   },
   {
-    "name": "tennis Tactics Seminar",
-    "image": "https://example.com/tactics.jpg",
+    "name": "Tennis Tactics Seminar",
+    "image": "https://i.ibb.co/J2RqZhW/tennis-ball.jpg",
     "instructor_name": "Olivia Roberts",
     "category": "tennis",
     "available_seat": 35,
@@ -46,7 +46,7 @@
   },
   {
     "name": "Goalkeeping Training",
-    "image": "https://th.bing.com/th/id/OIP.VxLEiBVkCvLlXtz3YlVhOQHaEK?pid=ImgDet&rs=1",
+    "image": "https://i.ibb.co/6v3F4kX/Nuer.jpg",
     "instructor_name": "John Lee",
     "category": "football",
     "available_seat": 87,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Dribbling Masterclass",
-    "image": "https://example.com/dribbling.jpg",
+    "image": "https://i.ibb.co/KqjHkr5/R.jpg",
     "instructor_name": "Sarah Johnson",
     "category": "football",
     "available_seat": 62,
@@ -64,7 +64,7 @@
   },
   {
     "name": "Striker's Finishing Workshop",
-    "image": "https://example.com/finishing.jpg",
+    "image": "https://i.ibb.co/SvF3jHn/football-1274661-960-720.jpg",
     "instructor_name": "David Martinez",
     "category": "football",
     "available_seat": 50,
@@ -73,7 +73,7 @@
   },
   {
     "name": "Defensive Tactics Seminar",
-    "image": "https://example.com/defense.jpg",
+    "image": "https://i.ibb.co/qMwbwxB/FCBArca.jpg",
     "instructor_name": "Michael Turner",
     "category": "football",
     "available_seat": 100,
@@ -82,7 +82,7 @@
   },
   {
     "name": "Midfield Playmaking Clinic",
-    "image": "https://example.com/midfield.jpg",
+    "image": "https://i.ibb.co/3RBJBCY/Midfield-Play-Passing-Practice-2.png",
     "instructor_name": "Emma Roberts",
     "category": "football",
     "available_seat": 75,
@@ -91,7 +91,7 @@
   },
   {
     "name": "Batting Techniques Workshop",
-    "image": "https://example.com/batting.jpg",
+    "image": "https://i.ibb.co/b6r8fkS/240-F-86643268-y-U2-VMBUi-He0p-HYW4uu-ULz-CYr-BE328kxw.jpg",
     "instructor_name": "Andrew Smith",
     "category": "cricket",
     "available_seat": 40,
@@ -100,7 +100,7 @@
   },
   {
     "name": "Bowling Masterclass",
-    "image": "https://example.com/bowling.jpg",
+    "image": "https://i.ibb.co/56h4Yqw/a038385ef3d9466b38a1831a89db3ff0.webp",
     "instructor_name": "Lisa Anderson",
     "category": "cricket",
     "available_seat": 35,
@@ -109,7 +109,7 @@
   },
   {
     "name": "Fielding Skills Training",
-    "image": "https://example.com/fielding.jpg",
+    "image": "https://i.ibb.co/SyqFcPh/189795.webp",
     "instructor_name": "James Wilson",
     "category": "cricket",
     "available_seat": 60,
@@ -118,7 +118,7 @@
   },
   {
     "name": "Cricket Strategy Workshop",
-    "image": "https://example.com/strategy.jpg",
+    "image": "https://i.ibb.co/rmQQmPk/Scotland.jpg",
     "instructor_name": "Sophia Davis",
     "category": "cricket",
     "available_seat": 25,
@@ -127,7 +127,7 @@
   },
   {
     "name": "Wicketkeeping Clinic",
-    "image": "https://example.com/wicketkeeping.jpg",
+    "image": "https://i.ibb.co/x1HbjmG/04hadds.jpg",
     "instructor_name": "Oliver Taylor",
     "category": "cricket",
     "available_seat": 30,
@@ -136,7 +136,7 @@
   },
   {
     "name": "Shooting Skills Training",
-    "image": "https://example.com/shooting.jpg",
+    "image": "https://i.ibb.co/P99XTWV/Dr-Dish-011817-1.webp",
     "instructor_name": "Jason Thompson",
     "category": "basketball",
     "available_seat": 30,
@@ -145,7 +145,7 @@
   },
   {
     "name": "Dribbling Techniques Workshop",
-    "image": "https://example.com/dribbling_basketball.jpg",
+    "image": "https://i.ibb.co/g4fBdrW/Adobe-Stock-217451286.jpg",
     "instructor_name": "Megan Harris",
     "category": "basketball",
     "available_seat": 25,
@@ -154,7 +154,7 @@
   },
   {
     "name": "Defensive Strategies Seminar",
-    "image": "https://example.com/defense_basketball.jpg",
+    "image": "https://i.ibb.co/37vgqHS/IMG-0024.jpg",
     "instructor_name": "Robert Johnson",
     "category": "basketball",
     "available_seat": 35,
@@ -163,7 +163,7 @@
   },
   {
     "name": "Passing Fundamentals Clinic",
-    "image": "https://example.com/passing_basketball.jpg",
+    "image": "https://i.ibb.co/3STfVYK/DSC-0008.jpg",
     "instructor_name": "Emily Turner",
     "category": "basketball",
     "available_seat": 20,
@@ -172,7 +172,7 @@
   },
   {
     "name": "Basketball Conditioning Camp",
-    "image": "https://example.com/conditioning_basketball.jpg",
+    "image": "https://i.ibb.co/tKGyJTM/Camp-1024x683.jpg",
     "instructor_name": "Daniel Martinez",
     "category": "basketball",
     "available_seat": 40,
@@ -181,7 +181,7 @@
   },
   {
     "name": "Rugby Tackling Techniques",
-    "image": "https://example.com/tackling_rugby.jpg",
+    "image": "https://i.ibb.co/8M402fc/73329-510-tackling-1.jpg",
     "instructor_name": "Samuel Wilson",
     "category": "rugby",
     "available_seat": 50,
@@ -190,7 +190,7 @@
   },
   {
     "name": "Lineout Skills Training",
-    "image": "https://example.com/lineout_rugby.jpg",
+    "image": "https://i.ibb.co/kSf3F9M/Developing-Strength-For-Rugby-Lineout-Movement-min-1.webp",
     "instructor_name": "Isabella Thompson",
     "category": "rugby",
     "available_seat": 30,
@@ -199,7 +199,7 @@
   },
   {
     "name": "Rugby Scrum Workshop",
-    "image": "https://example.com/scrum_rugby.jpg",
+    "image": "https://i.ibb.co/FBkH56c/B97910050-Z-1-20190502173254-000-GUVO478-Q-1-1.jpg",
     "instructor_name": "Thomas Johnson",
     "category": "rugby",
     "available_seat": 40,
@@ -208,7 +208,7 @@
   },
   {
     "name": "Rugby Kicking Clinic",
-    "image": "https://example.com/kicking_rugby.jpg",
+    "image": "hhttps://i.ibb.co/k4gf9pD/thumb-1825-default-gallery-big.jpg",
     "instructor_name": "Ava Davis",
     "category": "rugby",
     "available_seat": 25,
@@ -217,7 +217,7 @@
   },
   {
     "name": "Rugby Strategy Seminar",
-    "image": "https://example.com/strategy_rugby.jpg",
+    "image": "https://i.ibb.co/0BzV1Yz/DSC-6896.jpg",
     "instructor_name": "Noah Roberts",
     "category": "rugby",
     "available_seat": 35,

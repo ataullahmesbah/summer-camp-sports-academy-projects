@@ -56,7 +56,7 @@ const AllClasses = ({ allClass }) => {
 
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure>
-                <img src={image} alt="" />
+                <img className="h-64 w-full" src={image} alt="" />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
