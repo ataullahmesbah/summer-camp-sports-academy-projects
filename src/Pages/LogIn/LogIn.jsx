@@ -105,30 +105,30 @@ const LogIn = () => {
                     {/* password input field */}
 
                     <div className="mb-4 relative">
-  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-    Password
-  </label>
-  <div className="flex">
-    <input
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
-      id="password"
-      name="password"
-      type={passwordVisible ? 'text' : 'password'}
-      placeholder="Enter your password"
-      
-    />
-    <div
-      className="cursor-pointer ml-[-15px] self-center "
-      onClick={passwordVisible ? hidePassword : showPassword}
-    >
-      {passwordVisible ? (
-        <FaEyeSlash className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
-      ) : (
-        <FaEye className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
-      )}
-    </div>
-  </div>
-</div>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                            Password
+                        </label>
+                        <div className="flex">
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
+                                id="password"
+                                name="password"
+                                type={passwordVisible ? 'text' : 'password'}
+                                placeholder="Enter your password"
+
+                            />
+                            <div
+                                className="cursor-pointer ml-[-15px] self-center "
+                                onClick={passwordVisible ? hidePassword : showPassword}
+                            >
+                                {passwordVisible ? (
+                                    <FaEyeSlash className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
+                                ) : (
+                                    <FaEye className="text-gray-500 absolute ml-[-12px] mt-[-7px]" />
+                                )}
+                            </div>
+                        </div>
+                    </div>
 
 
 
