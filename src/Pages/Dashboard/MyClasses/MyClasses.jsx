@@ -1,10 +1,42 @@
+
 import useBookingClass from "../../../hooks/useBookingClass";
 import Container from "../../Shared/Container";
+import Swal from "sweetalert2";
 
 
 const MyClasses = () => {
-    const [bookingClass] = useBookingClass();
+    const [bookingClass, refetch] = useBookingClass();
     const total = bookingClass.reduce((sum, classes) => classes.price + sum, 0)
+
+    const handleDelete = booking => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        .then((result) => {
+            if(result.isConfirmed){
+                fetch(`http://localhost:5000/bookingClass/${booking._id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount > 0){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your Booking has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+        })
+    }
 
     return (
         <Container>
@@ -30,29 +62,29 @@ const MyClasses = () => {
                         <tbody>
                             {
                                 bookingClass.map((booking, index) => <tr
-                                key={booking._id}
+                                    key={booking._id}
                                 >
-                              <td>{index + 1}</td>
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={booking.image} alt="Avatar Tailwind CSS Component" />
+                                    <td>{index + 1}</td>
+                                    <td>
+                                        <div className="flex items-center space-x-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle w-12 h-12">
+                                                    <img src={booking.image} alt="Avatar Tailwind CSS Component" />
+                                                </div>
                                             </div>
+
                                         </div>
-                                       
-                                    </div>
-                                </td>
-                                <td>{booking.name}</td>
-                                <td>{booking.instructor_name}</td>
-                                <td>{booking.available_seat}</td>
-                                <td>{booking.price}</td>
-                                <th>
-                                    <button className="btn btn-error btn-sm ">Delete</button>
-                                </th>
-                            </tr>)
+                                    </td>
+                                    <td>{booking.name}</td>
+                                    <td>{booking.instructor_name}</td>
+                                    <td>{booking.available_seat}</td>
+                                    <td>{booking.price}</td>
+                                    <td>
+                                        <button onClick={() => handleDelete(booking)} className="btn btn-error btn-sm ">Delete</button>
+                                    </td>
+                                </tr>)
                             }
-                            
+
 
 
 
