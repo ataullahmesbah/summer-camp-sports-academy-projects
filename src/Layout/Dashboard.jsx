@@ -2,9 +2,15 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa";
 import { FaShoppingCart, FaBookOpen, FaDollarSign, FaUserGraduate, FaHome, FaPeopleArrows } from "react-icons/fa";
 import icon from '../Pages/Images/Education/learning.png'
+import useBookingClass from "../hooks/useBookingClass";
 
 
 const Dashboard = () => {
+
+    // TODO:
+    const isAdmin = true;
+
+
     return (
 
         <div className="drawer p-10">
@@ -21,12 +27,21 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-blue-900 ">
 
+                    {
+                        isAdmin ? <>
+                        <div className="mx-4 mt-3 flex gap-3">
+                        <img className="w-8 h-8" src={icon} alt="" />
+                    <li className="text-3xl  mb-8 text-yellow-500 font-bold">Elite Athlete <br /> Arena</li>
+                    </div>
 
+                    <li><NavLink to='/dashboard/myclasses' className='font-bold text-xl text-white'><FaUserGraduate /> Admin Home</NavLink></li>
+                    <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaBookOpen /> Enroll Class</NavLink></li>
+                    <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaShoppingCart /> My Booking Class</NavLink></li>
+                    <li><NavLink to='/dashboard/allusers' className='font-semibold text-xl text-white'><FaDollarSign /> All User</NavLink></li>
 
-
-                    {/* Sidebar content here */}
-
-                    <div className="mx-4 mt-3 flex gap-3">
+                    
+                        </> : <>
+                        <div className="mx-4 mt-3 flex gap-3">
                         <img className="w-8 h-8" src={icon} alt="" />
                     <li className="text-3xl  mb-8 text-yellow-500 font-bold">Elite Athlete <br /> Arena</li>
                     </div>
@@ -35,6 +50,12 @@ const Dashboard = () => {
                     <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaBookOpen /> Enroll Class</NavLink></li>
                     <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaShoppingCart /> My Booking Class</NavLink></li>
                     <li><NavLink to='/dashboard/payment' className='font-semibold text-xl text-white'><FaDollarSign /> Payment History</NavLink></li>
+
+                    
+                        </>
+                    }
+
+
 
                     <div className="divider"></div>
 
