@@ -19,7 +19,7 @@ const SignUp = () => {
     const password = useRef({});
     password.current = watch("password", "");
     const onSubmit = (data, event) => {
-        console.log(data);
+      
 
         // profile image
         const image = event.target.image.files[0];

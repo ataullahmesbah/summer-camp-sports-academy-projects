@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^4.29.12",
     "aos": "^2.3.4",
+    "axios": "^1.4.0",
     "firebase": "^9.22.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
