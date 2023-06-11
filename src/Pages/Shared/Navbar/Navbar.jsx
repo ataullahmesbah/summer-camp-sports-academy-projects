@@ -6,10 +6,13 @@ import elitearena from '../../Images/Education/Elite Athlete Arena Logo ..png'
 import useBookingClass from "../../../hooks/useBookingClass";
 import { FaShoppingCart } from "react-icons/fa";
 
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+
 
 
 const Navbar = () => {
-    // const [user, logOut] = useContext(AuthContext)
+    const {user} = useContext(AuthContext);
     const [bookingClass] = useBookingClass();
 
     // const handleLogOut = () => {
@@ -34,10 +37,12 @@ const Navbar = () => {
                             <Link to='/'>Home</Link>
                             <Link to='/instructors'>Instructors</Link>
                             <Link to='/classes'> Classes</Link>
-                            <Link to='/dashboard/myclasses'>Dashboard</Link>
+                            {
+                                user && <Link to='/dashboard/myclasses'>Dashboard</Link>
+                            }
                             <Link to='/'><button className="gap-2 btn">
-                            <FaShoppingCart /> <div className="">+{bookingClass?.length || 0}</div>
-                                </button></Link>
+                                <FaShoppingCart /> <div className="">+{bookingClass?.length || 0}</div>
+                            </button></Link>
 
                         </div>
                         <div className="">

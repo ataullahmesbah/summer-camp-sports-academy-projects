@@ -8,6 +8,8 @@ import Dashboard from "../Layout/Dashboard";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Pages/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import AdminHome from "../Pages/AdminHome/AdminHome";
 
 
 
@@ -36,15 +38,22 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'myclasses',
                 element: <MyClasses></MyClasses>
             },
+            
+            // admin route
             {
                 path: 'allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+
+            {
+                path: 'adminhome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
             }
         ]
     }
