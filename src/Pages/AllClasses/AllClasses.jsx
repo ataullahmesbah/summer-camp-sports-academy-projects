@@ -58,19 +58,18 @@ const AllClasses = ({ allClass }) => {
             <figure>
                 <img className="h-64 w-full" src={image} alt="" />
             </figure>
-            <div className="card-body">
+            <div className="card-body space-y-3">
                 <h2 className="card-title">{name}</h2>
-                <p>{instructor_name}</p>
-                <p>{available_seat}</p>
-                <p>{price}</p>
-                <div className="card-actions justify-end">
-                    <button onClick={() => handleBookingClass(allClass)} className="btn btn-primary">Book Now</button>
+                <p className="font-semibold">Instructor Name: {instructor_name}</p>
+                <div className="space-y-4">
+                <p className="font-semibold">Available Seats: {available_seat}</p>
+                <p className="font-semibold">Price: <span className="text-orange-500 text-xl">${price}</span></p>
+                </div>
+                <div className="card-actions justify-end pt-5">
+                    <button onClick={() => handleBookingClass(allClass)} className="btn btn-secondary btn-sm w-full">Booking Now</button>
                 </div>
             </div>
         </div>
-
-
-
     );
 };
 

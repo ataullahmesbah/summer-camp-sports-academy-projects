@@ -3,9 +3,10 @@ import Container from "../Shared/Container";
 import googleLogo from '../Images/SignLogo/google-signIn.png'
 import logo from '../Images/Education/learning.png'
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
 
@@ -14,7 +15,9 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/'
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    const password = useRef({});
+    password.current = watch("password", "");
     const onSubmit = (data, event) => {
         console.log(data);
 
@@ -31,12 +34,6 @@ const SignUp = () => {
             .then(res => res.json())
             .then(imageData => {
                 const imageUrl = imageData.data.display_url;
-
-
-
-
-
-
                 createUser(data.email, data.password, data.confirm)
                     .then(result => {
                         const loggedUser = result.user;
@@ -80,6 +77,17 @@ const SignUp = () => {
                 console.log(err.message);
 
             });
+    };
+
+    // Password visibility toggle
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const showPassword = () => {
+        setPasswordVisible(true);
+    };
+
+    const hidePassword = () => {
+        setPasswordVisible(false);
     };
 
     const handleGoogleSignIn = () => {
@@ -187,46 +195,78 @@ const SignUp = () => {
                         />
                         {errors.email && <span className="text-red-600">E-mail is required</span>}
                     </div>
+
                     {/* password input field */}
-                    <div className="mb-4">
+
+                    <div className="mb-4 relative">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                             Password
                         </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outlinlearning.pnge"
-                            id="password"
-                            {...register('password', {
-                                required: true,
-                                minLength: 6,
-                                maxLength: 20,
-                                pattern: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[a-z])/
-                            })}
-                            name='password'
-                            type="password"
-                            placeholder="Enter your password"
-                        />
+                        <div className="flex items-center">
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
+                                id="password"
+                                {...register('password', {
+                                    required: true,
+                                    minLength: 6,
+                                    maxLength: 20,
+                                    pattern: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[a-z])/
+                                })}
+                                name='password'
+                                type={passwordVisible ? 'text' : 'password'}
+                                placeholder="Enter your password"
+                            />
+                            <div
+                                className="cursor-pointer ml-[-30px] self-center"
+                                onClick={passwordVisible ? hidePassword : showPassword}
+                            >
+                                {passwordVisible ? (
+                                    <FaEyeSlash className="text-gray-500" />
+                                ) : (
+                                    <FaEye className="text-gray-500" />
+                                )}
+                            </div>
+                        </div>
                         {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
-                        {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one lower case, one upper case, one number and one special characters is required</p>}
-                        {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
+                        {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one lowercase, one uppercase, one number, and one special character</p>}
+                        {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be at least 6 characters</p>}
                         {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                     </div>
 
+
                     {/* Confirmed password input field */}
 
-                    {/* <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                    {/* Confirmed password input field */}
+                    <div className="mb-4 relative">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirm">
                             Confirm Password
                         </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
-                            id="password"
-                            {...register("confirm")}
-                            name='confirm'
-                            type="password"
-                            placeholder="Enter your confirm password"
-                        />
-                        {errors.confirm && <span className="text-red-600">Confirmed password required</span>}
-                    </div> */}
+                        <div className="flex items-center">
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-gray-100 focus:outline-none focus:shadow-outline"
+                                id="confirm"
+                                {...register("confirm", {
+                                    required: true,
+                                    validate: (value) => value === password.current || "Passwords do not match"
+                                })}
+                                name="confirm"
+                                type={passwordVisible ? 'text' : 'password'}
+                                placeholder="Enter your confirm password"
+                            />
+                            <div
+                                className="cursor-pointer ml-[-30px] self-center"
+                                onClick={passwordVisible ? hidePassword : showPassword}
+                            >
+                                {passwordVisible ? (
+                                    <FaEyeSlash className="text-gray-500" />
+                                ) : (
+                                    <FaEye className="text-gray-500" />
+                                )}
+                            </div>
+                        </div>
+                        {errors.confirm && <span className="text-red-600">{errors.confirm.message}</span>}
+                    </div>
+
 
                     {/* Sign Up input value */}
                     <div className="text-center mb-4 ">
