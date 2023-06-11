@@ -76,6 +76,7 @@ const MyClasses = () => {
                                 <th>Available Seat</th>
                                 <th>Price</th>
                                 <th>Delete</th>
+                                <th>Payment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -100,6 +101,9 @@ const MyClasses = () => {
                                     <td>{booking.price}</td>
                                     <td>
                                         <button onClick={() => handleDelete(booking)} className="btn btn-error btn-sm ">Delete</button>
+                                    </td>
+                                    <td>
+                                    <button className="btn btn-outline btn-accent btn-sm">Payment</button>
                                     </td>
                                 </tr>)
                             }
