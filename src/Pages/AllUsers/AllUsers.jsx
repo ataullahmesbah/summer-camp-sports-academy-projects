@@ -30,7 +30,63 @@ const AllUsers = () => {
     }
 
     const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+          method: 'PATCH'
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.modifiedCount) {
+              refetch();
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `${user.name} is an instructor Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
+          })
+          .catch(error => {
+            console.log(error);
+            Swal.fire({
+              position: 'top-end',
+              icon: 'error',
+              title: 'Failed to update user role',
+              showConfirmButton: false,
+              timer: 1500
+            });
+          });
+      };
 
+      const handleDelete = user => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: `Yes, delete ${user.name}`
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/users/${user._id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                refetch();
+                                Swal.fire(
+                                    'Deleted!',
+                                    `Your ${user.email} mail has been deleted.`,
+                                    'success'
+                                )
+                            }
+                        })
+                }
+            })
     }
 
     return (
@@ -60,13 +116,25 @@ const AllUsers = () => {
 
                                 <td><button
                                     onClick={() => handleMakeAdmin(user)}
-                                    className={` text-purple-600 btn-sm border border-purple-800 rounded-lg font-semibold ${user.role === 'admin' ? 'bg-slate-500 border-gray-300 text-gray-300 border-gray-200 ' : ''}`}
+                                    className={` text-purple-600 btn-sm border border-purple-800 rounded-lg font-semibold ${user.role === 'admin' ? 'bg-slate-500 text-gray-300 border-gray-200 ' : ''}`}
                                     disabled={user.role === 'admin'}
                                 >
                                     Admin
                                 </button></td>
-                                <td><button onClick={() => handleMakeInstructor(user)} className="btn btn-outline btn-accent btn-sm">Instructor</button></td>
-                                <td><button className="btn btn-error btn-sm">Delete</button></td>
+
+
+                                <td><button
+                  onClick={() => handleMakeInstructor(user)}
+                  className={`btn btn-outline btn-accent btn-sm ${
+                    user.role === 'instructor' ? 'disabled' : ''
+                  }`}
+                  disabled={user.role === 'instructor'}
+                >
+                  Instructor
+                </button></td>
+
+
+                                <td><button onClick={() => handleDelete(user)} className="btn btn-error btn-sm">Delete</button></td>
                             </tr>)
                         }
 
