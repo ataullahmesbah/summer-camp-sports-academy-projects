@@ -18,6 +18,7 @@ import InstructorOwnClass from "../Pages/InstructorOwnClass/InstructorOwnClass";
 import InstructorHome from "../Components/InstructorHome/InstructorHome";
 import AdminAllClasses from "../Pages/AdminAllClasses/AdminAllClasses";
 import ErrorPage from "../Pages/ErrorPage";
+import Payment from "../Pages/Payment/Payment";
 
 
 
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
             {
                 path: 'myclasses',
                 element: <MyClasses></MyClasses>
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
             },
 
             // instructor route

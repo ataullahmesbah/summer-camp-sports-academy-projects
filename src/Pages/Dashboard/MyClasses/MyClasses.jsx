@@ -2,11 +2,14 @@ import { FaShoppingCart } from "react-icons/fa";
 import useBookingClass from "../../../hooks/useBookingClass";
 import Container from "../../Shared/Container";
 import Swal from "sweetalert2";
+import { Link} from "react-router-dom";
 
 
 const MyClasses = () => {
     const [bookingClass, refetch] = useBookingClass();
-    const total = bookingClass.reduce((sum, classes) => classes.price + sum, 0)
+
+   
+    
 
     const handleDelete = booking => {
         Swal.fire({
@@ -57,10 +60,7 @@ const MyClasses = () => {
                             </div>
                         </button>
                     </h1>
-                    <div className="space-y-2">
-                    <h1 className="font-semibold text-xl">Sub Total: <span className="text-blue-950 text-2xl">${total}</span></h1>
-                    <button className="btn-sm btn-outline btn-secondary btn mx-16">Payment</button>
-                    </div>
+                    
                 </div>
                 
                 <div className="overflow-x-auto">
@@ -102,13 +102,12 @@ const MyClasses = () => {
                                         <button onClick={() => handleDelete(booking)} className="btn btn-error btn-sm ">Delete</button>
                                     </td>
                                     <td>
-                                    <button className="btn btn-outline btn-accent btn-sm">Payment</button>
+
+                                    <Link to='/dashboard/payment'><button className="btn btn-outline btn-accent btn-sm">Payment</button></Link>
+                                    
                                     </td>
                                 </tr>)
                             }
-
-
-
 
                         </tbody>
 

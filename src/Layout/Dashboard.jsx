@@ -78,13 +78,6 @@ const Dashboard = () => {
                     )}
 
 
-
-
-
-
-
-
-
                     <div className="divider"></div>
 
                     <li><NavLink to='/' className='font-bold text-xl text-white'><FaHome /> Home</NavLink></li>
