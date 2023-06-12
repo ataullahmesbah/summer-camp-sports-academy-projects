@@ -60,34 +60,43 @@ const InstructorOwnClass = () => {
             <div className="mx-20 mt-20">
                 <h2 className="text-5xl font-bold text-center mt-10 mb-10 text-blue-950">Your Personalized Classes:  <span className="text-gray-500">Unlocking Tailored Insights <br /> for Your Learning Journey</span></h2>
                 <p className="text-center text-stone-500 font-serif mb-8">Harness the power of your unique data! Our personalized dashboard provides tailored insights, empowering <br /> you to make informed decisions based on your preferences and goals. Log in now and take charge of <br /> your journey!</p>
-                <table className="table w-full">
 
-                    <thead className="bg-gray-200 uppercase">
-                        <tr>
+                {myClass.length === 0 ? (
+                    <div className="text-center mt-10">
+                        <p className="text-stone-500 font-serif text-6xl mb-5">No classes found.</p>
+                        <p className="text-stone-500 font-serif text-2xl">Add a class to get started!</p>
+                    </div>
+                ) : (
 
-                            <th>#</th>
-                            <th>Image</th>
-                            <th>Class Name</th>
-                            <th>E-mail</th>
-                            <th>Price</th>
-                            <th>Available Seats</th>
-                            <th>Category</th>
-                            <th>Delete</th>
+                    <table className="table w-full">
 
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            myClass.map((instructorClass, index) => <InstructorAllClasses
-                                key={instructorClass._id}
-                                instructorClass={instructorClass}
-                                index={index}
-                                handleDelete={handleDelete}
-                            ></InstructorAllClasses>)
-                        }
-                    </tbody>
-                </table>
+                        <thead className="bg-gray-200 uppercase">
+                            <tr>
+
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Class Name</th>
+                                <th>E-mail</th>
+                                <th>Price</th>
+                                <th>Available Seats</th>
+                                <th>Category</th>
+                                <th>Delete</th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                myClass.map((instructorClass, index) => <InstructorAllClasses
+                                    key={instructorClass._id}
+                                    instructorClass={instructorClass}
+                                    index={index}
+                                    handleDelete={handleDelete}
+                                ></InstructorAllClasses>)
+                            }
+                        </tbody>
+                    </table>
+                )}
             </div>
         </Container>
     );

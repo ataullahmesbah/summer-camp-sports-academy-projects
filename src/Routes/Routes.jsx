@@ -15,6 +15,9 @@ import Instructor from "../Pages/Instructor/Instructor";
 import InstructorRoute from "./InstructorRoute";
 import AddClass from "../Pages/AddClass/AddClass";
 import InstructorOwnClass from "../Pages/InstructorOwnClass/InstructorOwnClass";
+import InstructorHome from "../Components/InstructorHome/InstructorHome";
+import AdminAllClasses from "../Pages/AdminAllClasses/AdminAllClasses";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 
@@ -24,6 +27,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -62,6 +66,10 @@ export const router = createBrowserRouter([
                 element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
+                path: 'instructorhome',
+                element: <InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
+            },
+            {
                 path: 'instructorownclass',
                 element: <InstructorRoute>
                     <InstructorOwnClass></InstructorOwnClass>
@@ -77,6 +85,10 @@ export const router = createBrowserRouter([
             {
                 path: 'adminhome',
                 element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
+            {
+                path: 'adminallclasses',
+                element: <AdminRoute><AdminAllClasses></AdminAllClasses></AdminRoute>
             }
         ]
     }

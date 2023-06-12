@@ -12,7 +12,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [bookingClass] = useBookingClass();
 
     // const handleLogOut = () => {
@@ -20,6 +20,8 @@ const Navbar = () => {
     //         .then(() => { })
     //         .catch(error => console.log(error))
     // }
+
+   
 
 
     return (
@@ -37,9 +39,24 @@ const Navbar = () => {
                             <Link to='/'>Home</Link>
                             <Link to='/instructor'>Instructors</Link>
                             <Link to='/classes'> Classes</Link>
-                            {
+                            {/* {
                                 user && <Link to='/dashboard/myclasses'>Dashboard</Link>
+                            } */}
+
+                           
+
+                            {
+                                user && (
+                                    user.role === 'admin' ? (
+                                        <Link to='/dashboard/adminhome'>Dashboard</Link>
+                                    ) : user.role === 'instructor' ? (
+                                        <Link to='/dashboard/instructorhome'>Dashboard</Link>
+                                    ) : (
+                                        <Link to='/dashboard/myclasses'>Dashboard</Link>
+                                    )
+                                )
                             }
+
                             <Link to='/'><button className="gap-2 btn">
                                 <FaShoppingCart /> <div className="">+{bookingClass?.length || 0}</div>
                             </button></Link>

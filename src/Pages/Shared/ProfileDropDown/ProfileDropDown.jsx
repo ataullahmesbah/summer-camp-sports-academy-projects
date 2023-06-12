@@ -57,6 +57,21 @@ const ProfileDropDown = () => {
                             >
                                 Home
                             </Link>
+                            <Link className='block md:hidden mx-[-40px] py-3 hover:bg-neutral-100 transition font-semibold' to='/instructor'>Instructors</Link>
+                            <Link className='block md:hidden mx-[-40px] py-3 hover:bg-neutral-100 transition font-semibold' to='/classes'> Classes</Link>
+                            
+                            {
+                                user && (
+                                    user.role === 'admin' ? (
+                                        <Link className='block md:hidden mx-[-40px] py-3 hover:bg-neutral-100 transition font-semibold' to='/dashboard/adminhome'>Dashboard</Link>
+                                    ) : user.role === 'instructor' ? (
+                                        <Link className='block md:hidden mx-[-40px] py-3 hover:bg-neutral-100 transition font-semibold' to='/dashboard/instructorhome'>Dashboard</Link>
+                                    ) : (
+                                        <Link className='block md:hidden mx-[-40px] py-3 hover:bg-neutral-100 transition font-semibold' to='/dashboard/myclasses'>Dashboard</Link>
+                                    )
+                                )
+                            }
+
                             {user ? (
                                 <div
                                     onClick={logOut}

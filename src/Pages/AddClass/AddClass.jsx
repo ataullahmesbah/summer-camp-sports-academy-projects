@@ -3,6 +3,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Container from "../Shared/Container";
 
 const img_hosting_token = import.meta.env.VITE_Image;
 
@@ -49,7 +50,12 @@ const AddClass = () => {
             })
     };
     return (
-        <div>
+        <Container>
+            <div>
+
+
+            <h2 className="text-5xl font-bold text-center mt-10 mb-10 text-blue-950">Instructor:  <span className="text-gray-500">Add New Class</span></h2>
+                <p className="text-center text-stone-500 font-serif mb-8">Please enter the class name, available seats, price, and a brief description of the class. Additionally, you can provide <br /> any relevant details or attach a photo if necessary.</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex gap-4">
 
@@ -144,6 +150,7 @@ const AddClass = () => {
                 <input className="btn btn-sm btn-secondary mt-2" type="submit" value="Add New Class" />
             </form>
         </div>
+        </Container>
     );
 };
 
