@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Pages/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import AdminHome from "../Pages/AdminHome/AdminHome";
+import PopularInstructor from "../Pages/PopularInstructor/PopularInstructor";
 
 
 
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path: 'classes',
                 element: <Classes></Classes>
+            },
+            {
+                path: 'popularinstructor',
+                element: <PopularInstructor></PopularInstructor>
             }
         ]
     },

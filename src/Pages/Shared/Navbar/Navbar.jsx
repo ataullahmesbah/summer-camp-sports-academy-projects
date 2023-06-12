@@ -35,7 +35,7 @@ const Navbar = () => {
                         </Link>
                         <div className="space-x-4 font-semibold hidden md:block">
                             <Link to='/'>Home</Link>
-                            <Link to='/instructors'>Instructors</Link>
+                            <Link to='/instructor'>Instructors</Link>
                             <Link to='/classes'> Classes</Link>
                             {
                                 user && <Link to='/dashboard/myclasses'>Dashboard</Link>

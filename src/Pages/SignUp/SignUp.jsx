@@ -18,66 +18,64 @@ const SignUp = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const password = useRef({});
     password.current = watch("password", "");
+
+
     const onSubmit = (data, event) => {
-      
+  // profile image
+  const image = event.target.image.files[0];
+  const formData = new FormData();
+  formData.append('image', image);
 
-        // profile image
-        const image = event.target.image.files[0];
-        const formData = new FormData();
-        formData.append('image', image);
-
-        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image}`;
-        fetch(url, {
-            method: 'POST',
-            body: formData,
-        })
-            .then(res => res.json())
-            .then(imageData => {
-                const imageUrl = imageData.data.display_url;
-                createUser(data.email, data.password, data.confirm)
-                    .then(result => {
-                        const loggedUser = result.user;
-                        console.log(loggedUser);
-                        userProfileUpdate(data.name, imageUrl)
-                            .then(() => {
-                                const saveUser = { name: data.name, email: data.email }
-                                fetch('http://localhost:5000/users', {
-                                    method: 'POST',
-                                    headers: {
-                                        'content-type': 'application/json'
-                                    },
-                                    body: JSON.stringify(saveUser)
-                                })
-                                    .then(res => res.json())
-                                    .then(data => {
-                                        if (data.insertedId) {
-                                            reset();
-                                            Swal.fire({
-                                                position: 'top-end',
-                                                icon: 'success',
-                                                title: 'User created successfully',
-                                                showConfirmButton: false,
-                                                timer: 1500
-                                            })
-                                            navigate(from, { replace: true });
-                                        }
-                                    })
-                            })
-                            .catch(err => {
-                                console.log(err.message);
-                            });
-                    })
-                    .catch(err => {
-                        console.log(err.message);
+  const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image}`;
+  fetch(url, {
+    method: 'POST',
+    body: formData,
+  })
+    .then(res => res.json())
+    .then(imageData => {
+      const imageUrl = imageData.data.display_url;
+      createUser(data.email, data.password, data.confirm)
+        .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+          userProfileUpdate(data.name, imageUrl) // Update the user profile with the correct imageUrl
+            .then(() => {
+              const saveUser = { name: data.name, email: data.email, img: imageUrl }; // Use imageUrl instead of data.imageUrl
+              fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                  'content-type': 'application/json'
+                },
+                body: JSON.stringify(saveUser)
+              })
+                .then(res => res.json())
+                .then(data => {
+                  if (data.insertedId) {
+                    reset();
+                    Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'User created successfully',
+                      showConfirmButton: false,
+                      timer: 1500
                     });
-
+                    navigate(from, { replace: true });
+                  }
+                })
             })
             .catch(err => {
-
-                console.log(err.message);
-
+              console.log(err.message);
             });
-    };
+        })
+        .catch(err => {
+          console.log(err.message);
+        });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
 
     // Password visibility toggle
     const [passwordVisible, setPasswordVisible] = useState(false);
