@@ -1,4 +1,3 @@
-
 import { FaShoppingCart } from "react-icons/fa";
 import useBookingClass from "../../../hooks/useBookingClass";
 import Container from "../../Shared/Container";

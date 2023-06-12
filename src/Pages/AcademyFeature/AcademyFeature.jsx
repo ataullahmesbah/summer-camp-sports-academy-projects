@@ -8,10 +8,10 @@ const AcademyFeature = () => {
     return (
         <Container>
 
-            <h1 className="text-4xl text-center mt-10 font-bold mb-4 animate-fadeInRight">
+            <h1 className="text-4xl text-center mt-10 font-bold mb-2 animate-fadeInRight text-blue-950">
                 Welcome to our Sports Academy
             </h1>
-            <p className='text-xs mx-auto p-6 text-center'>Welcome to Elite Athlete Arena Academy, where champions are made. Our academy is a premier training facility dedicated to <br />nurturing and honing the skills of elite athletes. With state-of-the-art equipment, world-class coaches, and a supportive <br /> community, we provide a dynamic environment for athletes to reach their full potential. Join us to unlock your <br /> athletic prowess and elevate your performance to new heights</p>
+            <p className=' text-stone-500 font-serif mx-auto p-6 text-center'>Welcome to Elite Athlete Arena Academy, where champions are made. Our academy is a premier training facility dedicated to <br />nurturing and honing the skills of elite athletes. With state-of-the-art equipment, world-class coaches, and a supportive <br /> community, we provide a dynamic environment for athletes to reach their full potential. Join us to unlock your <br /> athletic prowess and elevate your performance to new heights</p>
             <div className="bg-gray-100 min-h-screen">
                 <section className="container mx-auto p-8 flex justify-between items-center">
                     <div className="flex flex-col lg:flex-row">
