@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Section 1 */}
           <div className="mx-5">
             <h3 className="text-xl font-bold">About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec justo ut felis lobortis aliquet.</p>
+            <p>Join Our Training Programs at Elite Athlete Arena Academy.</p>
           </div>
           
           {/* Section 2 */}

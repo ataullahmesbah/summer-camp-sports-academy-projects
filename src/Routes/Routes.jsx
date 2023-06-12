@@ -11,6 +11,7 @@ import AllUsers from "../Pages/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import AdminHome from "../Pages/AdminHome/AdminHome";
 import PopularInstructor from "../Pages/PopularInstructor/PopularInstructor";
+import Instructor from "../Pages/Instructor/Instructor";
 
 
 
@@ -36,8 +37,8 @@ export const router = createBrowserRouter([
                 element: <Classes></Classes>
             },
             {
-                path: 'popularinstructor',
-                element: <PopularInstructor></PopularInstructor>
+                path: 'instructor',
+                element: <Instructor></Instructor>
             }
         ]
     },
