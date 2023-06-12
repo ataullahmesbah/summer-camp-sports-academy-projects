@@ -14,6 +14,9 @@ import PopularInstructor from "../Pages/PopularInstructor/PopularInstructor";
 import Instructor from "../Pages/Instructor/Instructor";
 import InstructorRoute from "./InstructorRoute";
 import AddClass from "../Pages/AddClass/AddClass";
+import InstructorOwnClass from "../Pages/InstructorOwnClass/InstructorOwnClass";
+
+
 
 
 
@@ -58,6 +61,13 @@ export const router = createBrowserRouter([
                 path: 'addclass',
                 element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
+            {
+                path: 'instructorownclass',
+                element: <InstructorRoute>
+                    <InstructorOwnClass></InstructorOwnClass>
+                </InstructorRoute>
+            },
+
             // admin route
             {
                 path: 'allusers',

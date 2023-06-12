@@ -39,7 +39,7 @@ const AddClass = () => {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',
-                                    title: 'Item added successfully',
+                                    title: 'Class added successfully',
                                     showConfirmButton: false,
                                     timer: 1500
                                 })

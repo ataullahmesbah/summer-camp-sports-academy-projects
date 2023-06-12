@@ -58,7 +58,7 @@ const Dashboard = () => {
 
                             <li><NavLink to='/dashboard/myclasses' className='font-bold text-xl text-white'><FaUserGraduate /> Instructor Home</NavLink></li>
                             <li><NavLink to='/dashboard/addclass' className='font-semibold text-xl text-white'><FaPlusCircle /> Add Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/payment' className='font-semibold text-xl text-white'><FaBookmark /> My Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/instructorownclass' className='font-semibold text-xl text-white'><FaBookmark /> My Classes</NavLink></li>
                             <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaBookOpen /> Total Enroll Students</NavLink></li>
                             
                             
