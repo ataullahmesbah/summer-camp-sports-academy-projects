@@ -18,7 +18,8 @@ import InstructorOwnClass from "../Pages/InstructorOwnClass/InstructorOwnClass";
 import InstructorHome from "../Components/InstructorHome/InstructorHome";
 import AdminAllClasses from "../Pages/AdminAllClasses/AdminAllClasses";
 import ErrorPage from "../Pages/ErrorPage";
-import Payment from "../Pages/Payment/Payment";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+
 
 
 
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
                 element: <MyClasses></MyClasses>
             },
             {
-                path: 'payment',
+                path: 'payment/:id',
                 element: <Payment></Payment>
             },
 

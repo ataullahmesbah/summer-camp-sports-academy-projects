@@ -2,14 +2,14 @@ import { FaShoppingCart } from "react-icons/fa";
 import useBookingClass from "../../../hooks/useBookingClass";
 import Container from "../../Shared/Container";
 import Swal from "sweetalert2";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const MyClasses = () => {
     const [bookingClass, refetch] = useBookingClass();
 
-   
-    
+
+
 
     const handleDelete = booking => {
         Swal.fire({
@@ -45,11 +45,11 @@ const MyClasses = () => {
         <Container>
             <div className="">
                 <div className="text-center">
-                <h1 className="font-bold text-4xl p-5"><span className="text-blue-950">Empowering Students:</span> <span className="text-gray-600">
-                Book Your Classes and <br /> Summer Camp Learning Experience</span></h1>
-                <p className="mb-10">Welcome to our student-centered platform, where we put the power in the hands of learners. <br /> With our user-friendly interface, students can now easily book their desired classes <br /> and summer camp learning experiences. Whether you are looking to enhance <br /> your academic skills</p>
+                    <h1 className="font-bold text-4xl p-5"><span className="text-blue-950">Empowering Students:</span> <span className="text-gray-600">
+                        Book Your Classes and <br /> Summer Camp Learning Experience</span></h1>
+                    <p className="mb-10">Welcome to our student-centered platform, where we put the power in the hands of learners. <br /> With our user-friendly interface, students can now easily book their desired classes <br /> and summer camp learning experiences. Whether you are looking to enhance <br /> your academic skills</p>
                 </div>
-                
+
                 <div className="mb-5 flex items-center justify-between">
                     <h1 className=" flex items-center">
                         <span className="font-semibold text-xl mx-5">Total Bookings:</span>
@@ -60,9 +60,9 @@ const MyClasses = () => {
                             </div>
                         </button>
                     </h1>
-                    
+
                 </div>
-                
+
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
@@ -103,8 +103,13 @@ const MyClasses = () => {
                                     </td>
                                     <td>
 
-                                    <Link to='/dashboard/payment'><button className="btn btn-outline btn-accent btn-sm">Payment</button></Link>
-                                    
+                                        <Link to={`/dashboard/payment/${booking._id}`}>
+                                            <button className="btn btn-outline btn-accent btn-sm">Payment</button>
+                                        </Link>
+
+
+                                        {/* <Link to='/dashboard/payment'><button className="btn btn-outline btn-accent btn-sm">Payment</button></Link> */}
+
                                     </td>
                                 </tr>)
                             }
