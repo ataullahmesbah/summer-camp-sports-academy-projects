@@ -19,6 +19,7 @@ import InstructorHome from "../Components/InstructorHome/InstructorHome";
 import AdminAllClasses from "../Pages/AdminAllClasses/AdminAllClasses";
 import ErrorPage from "../Pages/ErrorPage";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
 
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <Payment></Payment>
+            },
+            {
+                path: 'paymenthistory',
+                element: <PaymentHistory></PaymentHistory>
             },
 
             // instructor route

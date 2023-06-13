@@ -5,7 +5,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import './CheckoutForm.css'
 
 
-const CheckoutForm = ({ bookingClass, price }) => {
+const CheckoutForm = ({ bookingClass, price, category, instructors, name }) => {
     const stripe = useStripe()
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -74,13 +74,17 @@ const CheckoutForm = ({ bookingClass, price }) => {
             // save payment information to the sever:
             const payment = {
                 email: user?.email,
+                
                 transactionId: paymentIntent.id,
                 price,
+                instructors,
+                category,
+                name,
                 date: new Date(),
                 quantity: bookingClass.length,
                 bookingClasses: bookingClass.map(item => item._id),
-                instructor: bookingClass.map(item => item.instructor_name),
-                bookingNames: bookingClass.map(item => item.name),
+                
+               
                 status: 'service pending',
             }
             axiosSecure.post('/payments', payment)
