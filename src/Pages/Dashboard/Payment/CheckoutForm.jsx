@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import './CheckoutForm.css'
 
 
 const CheckoutForm = ({ bookingClass, price }) => {
@@ -91,13 +92,11 @@ const CheckoutForm = ({ bookingClass, price }) => {
                 })
         }
 
-
-
     }
 
     return (
         <>
-            <form className="w-2/3 m-10" onSubmit={handleSubmit}>
+            <form className="w-1/2 m-10" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -114,8 +113,8 @@ const CheckoutForm = ({ bookingClass, price }) => {
                         },
                     }}
                 />
-                <button className="btn btn-outline btn-accent btn-sm mt-8" type="submit" disabled={!stripe || !clientSecret || processing}>
-                    Pay
+                <button className="btn btn-outline  btn-accent btn-sm mt-12" type="submit" disabled={!stripe || !clientSecret || processing}>
+                    Payment 
                 </button>
             </form>
             {cardError && <p className="text-red-700 ml-10">{cardError}</p>}
