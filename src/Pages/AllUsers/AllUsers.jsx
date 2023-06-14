@@ -91,7 +91,8 @@ const AllUsers = () => {
 
     return (
         <Container>
-            <div className="overflow-x-auto mt-10">
+            <div className="overflow-x-auto mt-10 mx-auto">
+<h2 className="text-center font-bold text-5xl text-blue-950 p-10">All Users Information </h2>
                 <table className="table">
                     {/* head */}
                     <thead className="uppercase bg-slate-200">

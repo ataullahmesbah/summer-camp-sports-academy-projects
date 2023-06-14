@@ -21,7 +21,7 @@ const Payment = () => {
 
   const price = parseFloat(booking.price.toFixed(2));
   const instructors = booking.instructor_name;
-  const category = booking.category;
+  const categories = booking.category;
   const name = booking.name;
 
   return (
@@ -44,7 +44,7 @@ const Payment = () => {
         <div className="mx-auto bg-gray-200 lg:w-1/2  p-10 rounded-lg text-center space-y-5">
 
           <Elements stripe={stripePromise}>
-            <CheckoutForm bookingClass={[booking]} price={price} instructors={instructors} category={category} name={name} />
+            <CheckoutForm bookingClass={[booking]} price={price} instructors={instructors} categories={categories} name={name} />
           </Elements>
         </div>
       </div>

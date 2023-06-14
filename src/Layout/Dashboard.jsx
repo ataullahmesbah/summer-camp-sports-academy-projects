@@ -70,8 +70,8 @@ const Dashboard = () => {
                                 <li className="text-3xl  mb-8 text-yellow-500 font-bold">Elite Athlete <br /> Arena</li>
                             </div>
 
-                            <li><NavLink to='/dashboard/myclasses' className='font-bold text-xl text-white'><FaUserGraduate /> Student Home</NavLink></li>
-                            <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaBookOpen /> Enroll Class</NavLink></li>
+                            <li><NavLink to='/dashboard/studenthome' className='font-bold text-xl text-white'><FaUserGraduate /> Student Home</NavLink></li>
+                            <li><NavLink to='/dashboard/enrollclasses' className='font-semibold text-xl text-white'><FaBookOpen /> Enroll Class</NavLink></li>
                             <li><NavLink to='/dashboard/myclasses' className='font-semibold text-xl text-white'><FaShoppingCart /> My Booking Class</NavLink></li>
                             <li><NavLink to='/dashboard/paymenthistory' className='font-semibold text-xl text-white'><FaDollarSign /> Payment History</NavLink></li>
                         </>

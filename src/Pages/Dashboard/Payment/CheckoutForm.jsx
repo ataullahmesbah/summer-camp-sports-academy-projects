@@ -5,7 +5,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import './CheckoutForm.css'
 
 
-const CheckoutForm = ({ bookingClass, price, category, instructors, name }) => {
+const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) => {
     const stripe = useStripe()
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -78,7 +78,7 @@ const CheckoutForm = ({ bookingClass, price, category, instructors, name }) => {
                 transactionId: paymentIntent.id,
                 price,
                 instructors,
-                category,
+                categories,
                 name,
                 date: new Date(),
                 quantity: bookingClass.length,
@@ -100,8 +100,8 @@ const CheckoutForm = ({ bookingClass, price, category, instructors, name }) => {
 
     return (
         <>
-            <form className="w-1/2 m-10" onSubmit={handleSubmit}>
-                <CardElement
+            <form className="w-1/2 m-auto " onSubmit={handleSubmit}>
+                <CardElement className="text-center items-center bg-white p-4 rounded-lg"
                     options={{
                         style: {
                             base: {

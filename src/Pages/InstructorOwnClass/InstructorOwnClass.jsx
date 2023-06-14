@@ -81,6 +81,7 @@ const InstructorOwnClass = () => {
                                 <th>Available Seats</th>
                                 <th>Category</th>
                                 <th>Delete</th>
+                                <th>Update</th>
 
                                 <th></th>
                             </tr>

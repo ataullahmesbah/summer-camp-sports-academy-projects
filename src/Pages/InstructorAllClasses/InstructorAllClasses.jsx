@@ -13,12 +13,13 @@ const InstructorAllClasses = ({ instructorClass, index, handleDelete }) => {
             <td>{category}</td>
 
 
-            
+
 
 
             <td><button onClick={() => handleDelete(_id)} className="btn btn-error btn-sm ">Delete</button>
-                                    </td>
-                                    
+            </td>
+            <td><button className="btn btn-primary btn-sm ">Update</button></td>
+
         </tr>
     );
 };
