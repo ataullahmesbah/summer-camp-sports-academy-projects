@@ -41,7 +41,7 @@ const SignUp = () => {
           userProfileUpdate(data.name, imageUrl) // Update the user profile with the correct imageUrl
             .then(() => {
               const saveUser = { name: data.name, email: data.email, img: imageUrl }; // Use imageUrl instead of data.imageUrl
-              fetch('http://localhost:5000/users', {
+              fetch('https://final-project-server-side-beta.vercel.app/users', {
                 method: 'POST',
                 headers: {
                   'content-type': 'application/json'
@@ -94,7 +94,7 @@ const SignUp = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://final-project-server-side-beta.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

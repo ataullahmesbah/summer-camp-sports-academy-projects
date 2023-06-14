@@ -9,7 +9,7 @@ const useBookingClass = () => {
   const { refetch, data: bookingClass = [] } = useQuery(
     ['bookingClass', user?.email],
     async () => {
-      const res = await fetch(`http://localhost:5000/bookingClass?email=${user?.email}`, {
+      const res = await fetch(`https://final-project-server-side-beta.vercel.app/bookingClass?email=${user?.email}`, {
         headers: {
           authorization: `bearer ${token}`
         }

@@ -10,7 +10,7 @@ const usePayment = () => {
   const { refetch, data: payments = [] } = useQuery(
     ['payments', user?.email],
     async () => {
-      const res = await fetch(`http://localhost:5000/payments?email=${user?.email}`, {
+      const res = await fetch(`https://final-project-server-side-beta.vercel.app/payments?email=${user?.email}`, {
         headers: {
           authorization: `bearer ${token}`
         }

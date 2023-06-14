@@ -15,7 +15,7 @@ const AllClasses = ({ allClass }) => {
         if (user && user.email) {
             const bookingClass = { classBooking: _id, name, image, price, instructor_name, available_seat, email: user.email }
 
-            fetch('http://localhost:5000/bookingClass', {
+            fetch('https://final-project-server-side-beta.vercel.app/bookingClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

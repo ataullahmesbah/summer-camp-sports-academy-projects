@@ -11,7 +11,7 @@ const InstructorOwnClass = () => {
     const [myClass, setMyClass] = useState([]);
     const navigate = useNavigate();
 
-    const url = `http://localhost:5000/classes?email=${user?.email}`;
+    const url = `https://final-project-server-side-beta.vercel.app/classes?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -33,7 +33,7 @@ const InstructorOwnClass = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/classes/${id}`, {
+                fetch(`https://final-project-server-side-beta.vercel.app/classes/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
