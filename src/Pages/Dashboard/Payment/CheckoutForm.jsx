@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import './CheckoutForm.css'
+import { Link } from "react-router-dom";
 
 
 const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) => {
@@ -14,6 +15,9 @@ const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) =>
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
+  
+
+
 
     useEffect(() => {
         if (price > 0) {
@@ -46,7 +50,7 @@ const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) =>
         }
         else {
             setCardError('')
-            
+
         }
         setProcessing(true)
 
@@ -71,10 +75,13 @@ const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) =>
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
+
+          
+
             // save payment information to the sever:
             const payment = {
                 email: user?.email,
-                
+
                 transactionId: paymentIntent.id,
                 price,
                 instructors,
@@ -83,15 +90,15 @@ const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) =>
                 date: new Date(),
                 quantity: bookingClass.length,
                 bookingClasses: bookingClass.map(item => item._id),
-                
-               
+
+
                 status: 'service pending',
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                    //    
+                        //    
                     }
                 })
         }
@@ -118,9 +125,11 @@ const CheckoutForm = ({ bookingClass, price, instructors, name, categories }) =>
                     }}
                 />
                 <button className="btn btn-outline  btn-accent btn-sm mt-12" type="submit" disabled={!stripe || !clientSecret || processing}>
-                    Payment 
+                    Payment
                 </button>
             </form>
+            
+
             {cardError && <p className="text-red-700 ml-10">{cardError}</p>}
             {transactionId && <p className="text-green-500">Transaction complete with transactionId: {transactionId}</p>}
         </>

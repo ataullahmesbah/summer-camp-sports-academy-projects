@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 import Container from "../Container";
 import ProfileDropDown from "../ProfileDropDown/ProfileDropDown";
-import elitearena from '../../Images/Education/Elite Athlete Arena Logo ..png'
+import elitearena from '../../Images/Education/Elite.png'
 
 import useBookingClass from "../../../hooks/useBookingClass";
 import { FaShoppingCart } from "react-icons/fa";
 
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 
 
 const Navbar = () => {
     const { user } = useContext(AuthContext);
     const [bookingClass] = useBookingClass();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     // const handleLogOut = () => {
     //     logOut()
@@ -21,7 +25,7 @@ const Navbar = () => {
     //         .catch(error => console.log(error))
     // }
 
-   
+
 
 
     return (
@@ -32,20 +36,21 @@ const Navbar = () => {
                     <div className="flex flex-row items-center gap-4 md:gap-0 justify-between">
 
 
-                        <Link to='/' className="font-semibold hidden md:block">
-                            <img className="w-48" src={elitearena} alt="" />
+
+                        <Link to="/" className="font-semibold">
+                            <img
+                                className="w-32 md:w-32 lg:w-64"
+                                src={elitearena}
+                                alt=""
+                            />
                         </Link>
+
                         <div className="space-x-4 font-semibold hidden md:block">
                             <Link to='/'>Home</Link>
                             <Link to='/instructor'>Instructors</Link>
                             <Link to='/classes'> Classes</Link>
+
                             {/* {
-                                user && <Link to='/dashboard/myclasses'>Dashboard</Link>
-                            } */}
-
-                           
-
-                            {
                                 user && (
                                     user.role === 'admin' ? (
                                         <Link to='/dashboard/adminhome'>Dashboard</Link>
@@ -55,7 +60,23 @@ const Navbar = () => {
                                         <Link to='/dashboard/myclasses'>Dashboard</Link>
                                     )
                                 )
+                            } */}
+
+                            {
+                                isAdmin ? (
+                                    <Link to='/dashboard/adminhome'>Dashboard</Link>
+                                ) : (
+                                    isInstructor ? (
+                                        <Link to='/dashboard/instructorhome'>Dashboard</Link>
+                                    ) : (
+                                        <Link to='/dashboard/studenthome'>Dashboard</Link>
+                                    )
+                                )
                             }
+
+
+
+
 
                             <Link to='/'><button className="gap-2 btn">
                                 <FaShoppingCart /> <div className="">+{bookingClass?.length || 0}</div>

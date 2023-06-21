@@ -7,7 +7,7 @@ const usePopularInstructor = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://final-project-server-side-beta.vercel.app/users')
+        fetch('https://final-project-server-side-ataullahmesbah.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setInstructor(data);

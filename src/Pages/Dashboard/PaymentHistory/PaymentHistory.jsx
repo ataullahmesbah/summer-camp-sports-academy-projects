@@ -44,7 +44,7 @@ const PaymentHistory = () => {
 
                 <div className="text-center mb-4">
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-2"
                         onClick={handleSort}
                     >
                         Sort {sort === "asc" ? "Ascending" : "Descending"}

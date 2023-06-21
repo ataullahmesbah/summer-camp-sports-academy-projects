@@ -23,7 +23,7 @@ const MyClasses = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`https://final-project-server-side-beta.vercel.app/bookingClass/${booking._id}`, {
+                    fetch(`https://final-project-server-side-ataullahmesbah.vercel.app/bookingClass/${booking._id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

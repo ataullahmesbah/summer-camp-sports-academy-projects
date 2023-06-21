@@ -10,7 +10,7 @@ const AdminAllClasses = () => {
 
 
     useEffect(() => {
-        fetch('https://final-project-server-side-beta.vercel.app/classes')
+        fetch('https://final-project-server-side-ataullahmesbah.vercel.app/classes')
             .then(res => res.json())
             .then(data => setAllClasses(data));
     }, [])

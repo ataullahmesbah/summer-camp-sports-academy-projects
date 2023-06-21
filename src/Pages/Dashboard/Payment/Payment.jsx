@@ -37,7 +37,6 @@ const Payment = () => {
             <p className="text-gray-500 font-semibold">Email: {user?.email}</p>
             <p className="font-semibold">Price: <span className="text-orange-500">${price}</span></p>
           </div>
-
         </div>
 
 
